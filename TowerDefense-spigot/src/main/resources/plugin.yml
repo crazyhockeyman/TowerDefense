@@ -1,0 +1,4 @@
+name: TowerDefense
+version: '${project.version}'
+main: dev.znci.towerdefense.TowerDefenseSpigot
+authors: [ grcq ]
