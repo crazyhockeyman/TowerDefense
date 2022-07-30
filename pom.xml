@@ -45,9 +45,12 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <modules>
-        <module>towerdefense-common</module>
-        <module>towerdefense-spigot</module>
-    </modules>
+	<profiles>
+		<profile>
+			<modules>
+				<module>towerdefense-common</module>
+				<module>towerdefense-spigot</module>           
+			</modules>
+		</profile>
+	</profiles>
 </project>
