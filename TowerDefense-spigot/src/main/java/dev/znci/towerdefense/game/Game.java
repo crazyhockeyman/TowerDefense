@@ -39,4 +39,8 @@ public class Game {
         return str.toString();
     }
 
+    public void start() {
+        // TODO: Start method.
+    }
+
 }

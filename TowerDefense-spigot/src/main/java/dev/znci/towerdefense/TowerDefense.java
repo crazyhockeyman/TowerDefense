@@ -3,7 +3,10 @@ package dev.znci.towerdefense;
 import cf.grcq.priveapi.PriveAPI;
 import cf.grcq.priveapi.command.CommandHandler;
 import cf.grcq.priveapi.utils.Util;
+import dev.znci.towerdefense.commands.parameters.GameParameterType;
 import dev.znci.towerdefense.commands.parameters.GameWorldParameterType;
+import dev.znci.towerdefense.game.Game;
+import dev.znci.towerdefense.game.GameHandler;
 import dev.znci.towerdefense.game.world.GameWorld;
 import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,6 +17,8 @@ public final class TowerDefense extends JavaPlugin {
 
     @Getter private static TowerDefense instance;
 
+    @Getter private GameHandler gameHandler;
+
     @Override
     public void onEnable() {
         instance = this;
@@ -21,6 +26,8 @@ public final class TowerDefense extends JavaPlugin {
         this.saveDefaultConfig();
 
         PriveAPI.init(this);
+
+        this.gameHandler = new GameHandler();
 
         String name = getDescription().getName();
         String version = getDescription().getVersion();
@@ -32,6 +39,7 @@ public final class TowerDefense extends JavaPlugin {
         CommandHandler.setNoPermissionMessage(PREFIX + "&cNo permission!");
 
         CommandHandler.registerParameter(GameWorld.class, new GameWorldParameterType());
+        CommandHandler.registerParameter(Game.class, new GameParameterType());
         CommandHandler.registerAll(this);
     }
 

@@ -3,19 +3,27 @@ package dev.znci.towerdefense.game;
 import cf.grcq.priveapi.minigame.game.profile.GameProfile;
 import dev.znci.towerdefense.TowerDefense;
 import dev.znci.towerdefense.game.world.GameWorld;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameHandler {
 
-    public static List<Game> activeGames = new ArrayList<>();
+    @Getter
+    private final List<Game> activeGames;
+    @Getter
+    private final Map<Player, Game> playersInGame;
+
+    public GameHandler() {
+        this.activeGames = new ArrayList<>();
+        this.playersInGame = new HashMap<>();
+    }
 
     public Game newGame() {
         List<GameWorld> gameWorlds = (List<GameWorld>) GameWorld.getGameWorlds().values();
@@ -46,6 +54,7 @@ public class GameHandler {
                 if (profile.isOnline()) {
                     Player player = Bukkit.getPlayer(profile.getUuid());
 
+                    playersInGame.remove(player);
                     // TODO: Get spawn location from config and teleport player. If set-up is false, teleport to world spawn.
                 }
             }
@@ -54,5 +63,13 @@ public class GameHandler {
         activeGames.remove(game);
     }
 
+    @Nullable
+    public Game getGame(String id) {
+        for (Game game : activeGames) {
+            if (game.getId().equalsIgnoreCase(id)) return game;
+        }
+
+        return null;
+    }
 
 }
