@@ -10,6 +10,10 @@ soon:tm:
 
 Please follow the Contributor Covenant Code of Conduct.
 
+## POM and .jar Builds
+
+Please [Log in as guest on our TeamCity](https://ci.znci.dev) to see our latest builds
+
 ## Contributors
 
 @grcq - Project Lead
