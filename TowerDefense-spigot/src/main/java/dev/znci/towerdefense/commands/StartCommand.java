@@ -22,3 +22,7 @@ public class StartCommand {
     }
 
 }
+gamer stop
+/stop
+/die
+Access-Control-Allow-Origin:Access-Control-Allow-Origin:VAccess-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:VAccess-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:VAccess-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:VAccess-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:VAccess-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:Access-Control-Allow-Origin:
